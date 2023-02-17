@@ -41,9 +41,15 @@ typedef NSMutableArray<NSMutableArray<NSNumber *> *> FDIndexPathHeightsBySection
     return self;
 }
 
+#if TARGET_OS_TV
+- (FDIndexPathHeightsBySection *)heightsBySectionForCurrentOrientation {
+    return self.heightsBySectionForLandscape;
+}
+#else
 - (FDIndexPathHeightsBySection *)heightsBySectionForCurrentOrientation {
     return UIDeviceOrientationIsPortrait([UIDevice currentDevice].orientation) ? self.heightsBySectionForPortrait: self.heightsBySectionForLandscape;
 }
+#endif
 
 - (void)enumerateAllOrientationsUsingBlock:(void (^)(FDIndexPathHeightsBySection *heightsBySection))block {
     block(self.heightsBySectionForPortrait);

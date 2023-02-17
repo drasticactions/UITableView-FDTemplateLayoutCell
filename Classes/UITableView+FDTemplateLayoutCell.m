@@ -45,6 +45,13 @@
     if (cell.accessoryView) {
         rightSystemViewsWidth += 16 + CGRectGetWidth(cell.accessoryView.frame);
     } else {
+#if TARGET_OS_TV
+        static const CGFloat systemAccessoryWidths[] = {
+            [UITableViewCellAccessoryNone] = 0,
+            [UITableViewCellAccessoryDisclosureIndicator] = 34,
+            [UITableViewCellAccessoryCheckmark] = 40
+        };
+#else
         static const CGFloat systemAccessoryWidths[] = {
             [UITableViewCellAccessoryNone] = 0,
             [UITableViewCellAccessoryDisclosureIndicator] = 34,
@@ -52,6 +59,7 @@
             [UITableViewCellAccessoryCheckmark] = 40,
             [UITableViewCellAccessoryDetailButton] = 48
         };
+#endif
         rightSystemViewsWidth += systemAccessoryWidths[cell.accessoryType];
     }
     
@@ -136,9 +144,13 @@
     }
     
     // Add 1px extra space for separator line if needed, simulating default UITableViewCell.
+#if TARGET_OS_TV
+    fittingHeight += 1.0 / [UIScreen mainScreen].scale;
+#else
     if (self.separatorStyle != UITableViewCellSeparatorStyleNone) {
         fittingHeight += 1.0 / [UIScreen mainScreen].scale;
     }
+#endif
     
     return fittingHeight;
 }

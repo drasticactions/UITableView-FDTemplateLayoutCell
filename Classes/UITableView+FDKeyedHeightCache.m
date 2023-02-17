@@ -39,9 +39,15 @@
     return self;
 }
 
+#if TARGET_OS_TV
+- (NSMutableDictionary<id<NSCopying>, NSNumber *> *)mutableHeightsByKeyForCurrentOrientation {
+    return self.mutableHeightsByKeyForLandscape;
+}
+#else
 - (NSMutableDictionary<id<NSCopying>, NSNumber *> *)mutableHeightsByKeyForCurrentOrientation {
     return UIDeviceOrientationIsPortrait([UIDevice currentDevice].orientation) ? self.mutableHeightsByKeyForPortrait: self.mutableHeightsByKeyForLandscape;
 }
+#endif
 
 - (BOOL)existsHeightForKey:(id<NSCopying>)key {
     NSNumber *number = self.mutableHeightsByKeyForCurrentOrientation[key];
