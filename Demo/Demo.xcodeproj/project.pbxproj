@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		485DB89B1BAFFF8900CEAE33 /* UITableView+FDKeyedHeightCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 485DB89A1BAFFF8900CEAE33 /* UITableView+FDKeyedHeightCache.m */; settings = {ASSET_TAGS = (); }; };
-		485DB89E1BB0004300CEAE33 /* UITableView+FDIndexPathHeightCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 485DB89D1BB0004300CEAE33 /* UITableView+FDIndexPathHeightCache.m */; settings = {ASSET_TAGS = (); }; };
+		485DB89B1BAFFF8900CEAE33 /* UITableView+FDKeyedHeightCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 485DB89A1BAFFF8900CEAE33 /* UITableView+FDKeyedHeightCache.m */; };
+		485DB89E1BB0004300CEAE33 /* UITableView+FDIndexPathHeightCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 485DB89D1BB0004300CEAE33 /* UITableView+FDIndexPathHeightCache.m */; };
 		488EECB71ADFEDC6004EAA71 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 488EECB61ADFEDC6004EAA71 /* main.m */; };
 		488EECBA1ADFEDC6004EAA71 /* FDAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 488EECB91ADFEDC6004EAA71 /* FDAppDelegate.m */; };
 		488EECC01ADFEDC6004EAA71 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 488EECBE1ADFEDC6004EAA71 /* Main.storyboard */; };
@@ -23,6 +23,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3A664E57299FC195001732C0 /* Demo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Demo.entitlements; sourceTree = "<group>"; };
 		485DB8991BAFFF8900CEAE33 /* UITableView+FDKeyedHeightCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableView+FDKeyedHeightCache.h"; sourceTree = "<group>"; };
 		485DB89A1BAFFF8900CEAE33 /* UITableView+FDKeyedHeightCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableView+FDKeyedHeightCache.m"; sourceTree = "<group>"; };
 		485DB89C1BB0004300CEAE33 /* UITableView+FDIndexPathHeightCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableView+FDIndexPathHeightCache.h"; sourceTree = "<group>"; };
@@ -78,6 +79,7 @@
 		488EECB31ADFEDC6004EAA71 /* Demo */ = {
 			isa = PBXGroup;
 			children = (
+				3A664E57299FC195001732C0 /* Demo.entitlements */,
 				48954A191B5102E200EFD15D /* Classes */,
 				488EECEA1ADFF905004EAA71 /* Feed */,
 				488EECC11ADFEDC6004EAA71 /* Images.xcassets */,
@@ -160,6 +162,7 @@
 				TargetAttributes = {
 					488EECB01ADFEDC6004EAA71 = {
 						CreatedOnToolsVersion = 6.3;
+						DevelopmentTeam = 4RY43FCKF8;
 					};
 				};
 			};
@@ -168,6 +171,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -318,10 +322,17 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Demo/Demo.entitlements;
+				DEVELOPMENT_TEAM = 4RY43FCKF8;
 				INFOPLIST_FILE = Demo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.forkingdog.templatelayoutcell.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = YES;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -329,10 +340,17 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Demo/Demo.entitlements;
+				DEVELOPMENT_TEAM = 4RY43FCKF8;
 				INFOPLIST_FILE = Demo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.forkingdog.templatelayoutcell.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = YES;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
